@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './lloggggg.jpeg'
+import logo from './logo.jpeg'
 
 
 const Nav = () => {
@@ -49,7 +49,7 @@ const signup=()=>{
             <span className="hamburger-btn material-symbols-rounded">menu</span>
             <a href="#" className="logo">
                 <img src={logo} alt="logo"/>
-                <h2>QualityBean
+                <h2>GhalaBora
                     
                 </h2>
             </a>
