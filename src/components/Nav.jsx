@@ -5,14 +5,7 @@ import logo from './lloggggg.jpeg'
 const Nav = () => {
 //     const navbarMenu = document.querySelector(".navbar .links");
 // const hamburgerBtn = document.querySelector(".hamburger-btn");
-// const hideMenuBtn = navbarMenu.querySelector(".close-btn");
-
-const login=()=>{
-    document.body.classList.toggle("show-popup");
-}
-const close=()=>{
-    showPopupBtn.click()
-}
+// const hideMenuBtn = navbarMenu.querySelector(".close-btn"); 
 // const showPopupBtn = document.querySelector(".login-btn");
 // const formPopup = document.querySelector(".form-popup");
 // const hidePopupBtn = formPopup.querySelector(".close-btn");
@@ -36,6 +29,18 @@ const close=()=>{
 //         formPopup.classList[link.id === 'signup-link' ? 'add' : 'remove']("show-signup");
 //     });
 // }); 
+
+
+
+
+const login=()=>{
+    document.body.classList.toggle("show-popup");
+}
+
+const signup=()=>{
+    document.body.classList.toggle("show-popup");
+}
+
   return (
     <div>
       
@@ -51,10 +56,11 @@ const close=()=>{
             <ul className="links">
                 <span className="close-btn material-symbols-rounded">close</span>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Problem</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Colaborators</a></li>
             </ul>
             <button className="login-btn" onClick={login}>LOG IN</button>
         </nav>
@@ -83,7 +89,7 @@ const close=()=>{
                 </form>
                 <div className="bottom-link">
                     Don't have an account?
-                    <a href="#" id="signup-link">Signup</a>
+                    <a href="#" id="signup-link" onClick={signup}>Signup</a>
                 </div>
             </div>
         </div>
