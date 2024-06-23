@@ -20,9 +20,9 @@ const Nav = () => {
 // showPopupBtn.addEventListener("click", () => {
 //     document.body.classList.toggle("show-popup");
 // });
-// // Hide login popup
+// Hide login popup
 // hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
-// // Show or hide signup form
+// Show or hide signup form
 // signupLoginLink.forEach(link => {
 //     link.addEventListener("click", (e) => {
 //         e.preventDefault();
@@ -37,8 +37,12 @@ const login=()=>{
     document.body.classList.toggle("show-popup");
 }
 
-const signup=()=>{
+const close=()=>{
     document.body.classList.toggle("show-popup");
+}
+const signup=()=>{
+    // document.body.classList.toggle("show-signu");
+    // document.body.classList.toggle("show-popup");
 }
 
   return (
@@ -54,13 +58,13 @@ const signup=()=>{
                 </h2>
             </a>
             <ul className="links">
-                <span className="close-btn material-symbols-rounded">close</span>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Problem</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Colaborators</a></li>
+                <span className="close-btn material-symbols-rounded" onClick={close}>close</span>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Problem">Problem</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#collaborators">Collaborators</a></li>
             </ul>
             <button className="login-btn" onClick={login}>LOG IN</button>
         </nav>
@@ -69,10 +73,10 @@ const signup=()=>{
     <div className="form-popup">
         <span className="close-btn material-symbols-rounded" ><button onClick={close}>close</button></span>
         <div className="form-box login">
-            <div className="form-details">
+            {/* <div className="form-details">
                 <h2>Welcome Back</h2>
                 <p>Please log in using your personal information to stay connected with us.</p>
-            </div>
+            </div> */}
             <div className="form-content">
                 <h2>LOGIN</h2>
                 <form action="#">

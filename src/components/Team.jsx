@@ -24,28 +24,28 @@ const Team = () => {
               <img src={bene} alt="test"/>
               <div className="layer">
                   <h3>Benedict Waweru</h3>
-                  <p>Team Lead </p> <p>Technical Researcher</p>  <p>Backend Developer</p>
+                  <p>Team Lead <br />Technical Researcher <br /> Backend Developer</p>
               </div>
           </div>
           <div className="campus-col">
               <img src={theo} alt="test"/>
               <div className="layer">
                   <h3>Theophilus Korir</h3>
-                  <p>Market Researcher </p> <p>Frontend Developer</p>
+                  <p>Market Researcher <br />Frontend Developer</p>
               </div>
           </div>
           <div className="campus-col">
               <img src={joe} alt="test"/> 
               <div className="layer">
                   <h3>Josphat Thumi</h3>
-                  <p>Product Researcher</p> <p>Frontend Developer</p>
+                  <p>Product Researcher<br />Frontend Developer</p>
               </div>
           </div>
           <div className="campus-col">
               <img src={lelgo} alt="test"/>
               <div className="layer">
                   <h3>Isaac Lelgo</h3>
-                  <p>Product Researcher</p> <p> Backend Developer</p>
+                  <p>Product Researcher<br />Backend Developer</p>
               </div>
           </div>
           <div className="campus-col">

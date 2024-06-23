@@ -8,6 +8,7 @@ import Team from './components/Team'
 import Features from './components/Features'
 import Collaborators from './components/Collaborators'
 import Services from './components/Services'
+import Problem from './components/Problem'
 
 
 
@@ -19,6 +20,7 @@ function App() {
    
      <div><Nav /></div>
       <div>  <Homepage/></div>
+      <Problem/>
       <Services/>
       <Features/>
       

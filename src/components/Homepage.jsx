@@ -38,25 +38,7 @@ const bene='../images/bene'
       </div>
   </section>
 
-<section id="Problem">
-<div className="prob">
-  <motion.h1
-  variants={container(0.3)}
-  initial="hidden"
-  animate='visible'>Problem</motion.h1>
-  <motion.p
-  variants={container(0.4)}
-  initial="hidden"
-  animate='visible'>Traditional quality 
-      control systems are 
-      plagued by inefficiencies
-       due to manual inspections, 
-      which are labor-intensive and 
-      error-prone, leading to
-       inconsistent data and 
-      delayed issue detection</motion.p>
-</div>
-</section>
+
 
   
   

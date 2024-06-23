@@ -7,7 +7,7 @@ import jhub from '../images/jhub.jpg'
 
 const Collaborators = () => {
   return (
-    <section className="collaborators" id="collab">
+    <section className="collaborators" id="collaborators">
       <motion.h1
       whileInView={{opacity:1,x:0}}
       initial={{opacity:0,x:100}}

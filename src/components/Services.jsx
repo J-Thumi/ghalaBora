@@ -13,7 +13,7 @@ const container=(delay)=>({
 
 const Features = () => {
   return (
-    <section className="course" id="service">
+    <section className="course" id="services">
       <motion.h1 variants={container(0.5)}
           initial="hidden"
           animate='visible'>Our System Offers:</motion.h1>
