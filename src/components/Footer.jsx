@@ -1,5 +1,10 @@
 import React from 'react'
+import {FaLinkedin} from "react-icons/fa"
+import {FaGithub} from "react-icons/fa"
+import { FaTwitter } from 'react-icons/fa';
+import {FaInstagram} from "react-icons/fa"
 
+import logo from './logo.jpeg'
 const Footer = () => {
   return (
     <footer id='footer'>
@@ -7,8 +12,8 @@ const Footer = () => {
         <div className="footer_section">
           <div className="footer_logo">
             <a href="index.html">
-              <img src="coffeee.jpg" alt="Coffee Logo" />
-              <h2>Coffee</h2>
+              <img src={logo} alt="Coffee Logo" />
+              <h2>GhalaBora</h2>
             </a>
           </div>
           <div className="useful_links">
@@ -35,15 +40,19 @@ const Footer = () => {
               </li>
               <li>
                 <i className="bx bxs-time-five"></i>
-                <span>Mon-Sun : 10:00 AM - 7:00 PM</span>
+                
               </li>
             </ul>
           </div>
           <div className="follow_us">
             <h3>Follow</h3>
-            <i className="bx bxl-facebook-circle"></i>
+            {/* <i className="bx bxl-facebook-circle"></i>
             <i className="bx bxl-twitter"></i>
-            <i className="bx bxl-instagram-alt"></i>
+            <i className="bx bxl-instagram-alt"></i> */}
+
+<a href= "https://github.com/J-Thumi">   <FaGithub /></a>
+        <a href="https://www.instagram.com/__thumi/">   <FaInstagram /></a>
+        <a href="https://www.linkedin.com/in/josphat-thumi-0b0795308/">   <FaLinkedin /></a>
           </div>
         </div>
       </div>
