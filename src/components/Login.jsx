@@ -2,7 +2,9 @@ import React from 'react'
 
 const Login = () => {
 
-   
+    const close=()=>{
+        document.body.classList.toggle("show-popup");
+    }
     
     const signup=()=>{
         document.body.classList.toggle("show-popup");

@@ -122,6 +122,7 @@ const signup=()=>{
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
+                
                 <div className="bottom-link">
                     Already have an account? 
                     <a href="#" id="login-link">Login</a>
