@@ -65,6 +65,7 @@ const signup=()=>{
                 <li><a href="#team">Team</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#collaborators">Collaborators</a></li>
+                <li><a href="#footer">Footer</a></li>
             </ul>
             <button className="login-btn" onClick={login}>LOG IN</button>
         </nav>
@@ -122,7 +123,7 @@ const signup=()=>{
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
-                
+
                 <div className="bottom-link">
                     Already have an account? 
                     <a href="#" id="login-link">Login</a>

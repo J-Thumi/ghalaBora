@@ -12,6 +12,7 @@ import Problem from './components/Problem'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,7 +28,7 @@ function App() {
       
       <Team/>
    <Collaborators/>
-
+<Footer/>
    
    {/* <Routes>
     <Route path='/' element={<Homepage/>}></Route>

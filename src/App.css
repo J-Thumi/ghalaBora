@@ -669,3 +669,61 @@ h3 {
   top: 1rem;
   text-align: center;
 }
+
+footer {
+  background: #1b1b1b;
+  color: var(--white-color);
+  padding: 60px 20px;
+}
+.footer_section {
+  display: flex;
+  justify-content: space-between;
+}
+.footer_section h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.footer_section .footer_logo a {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: var(--white-color);
+}
+.footer_section .footer_logo a img {
+  max-width: 55px;
+}
+.footer_section .footer_logo a h2 {
+  font-weight: 600;
+}
+.footer_section .useful_links ul li {
+  margin: 20px 0;
+}
+.footer_section .useful_links ul li a {
+  color: var(--white-color);
+  font-size: 17px;
+}
+.footer_section .useful_links ul li a:hover {
+  text-decoration: underline;
+}
+.footer_section .contact_us ul li {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer_section .contact_us ul li i {
+  font-size: 25px;
+}
+.footer_section .contact_us ul li span {
+  font-size: 17px;
+}
+.footer_section .follow_us i {
+  font-size: 26px;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.footer_section .follow_us i:hover {
+  color: var(--secondary-color);
+}
