@@ -1,7 +1,8 @@
 import React from 'react'
-import logo from './logo.jpeg'
-
-
+import logo from '../images/logo.jpeg'
+import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
+import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 const Nav = () => {
 //     const navbarMenu = document.querySelector(".navbar .links");
 // const hamburgerBtn = document.querySelector(".hamburger-btn");
@@ -32,7 +33,6 @@ const Nav = () => {
 
 
 
-
 const login=()=>{
     document.body.classList.toggle("show-popup");
 }
@@ -50,13 +50,14 @@ const signup=()=>{
       
     <header>
         <nav className="navbar">
-            <span className="hamburger-btn material-symbols-rounded">menu</span>
+            <span className="hamburger-btn material-symbols-rounded"><MenuOutlined/></span>
             <a href="#" className="logo">
                 <img src={logo} alt="logo"/>
                 <h2>GhalaBora
                     
                 </h2>
             </a>
+           
             <ul className="links">
                 <span className="close-btn material-symbols-rounded" onClick={close}>close</span>
                 <li><a href="#Home">Home</a></li>
@@ -67,12 +68,14 @@ const signup=()=>{
                 <li><a href="#collaborators">Collaborators</a></li>
                 <li><a href="#footer">Footer</a></li>
             </ul>
+
+
             <button className="login-btn" onClick={login}>LOG IN</button>
         </nav>
     </header>
     <div className="blur-bg-overlay"></div>
     <div className="form-popup">
-        <span className="close-btn material-symbols-rounded" ><button onClick={close}>close</button></span>
+        <span className="close-btn material-symbols-rounded" ><button onClick={close}><CloseOutlined/></button></span>
         <div className="form-box login">
             {/* <div className="form-details">
                 <h2>Welcome Back</h2>
@@ -90,7 +93,10 @@ const signup=()=>{
                         <label>Password</label>
                     </div>
                     <a href="#" className="forgot-pass-link">Forgot password?</a>
-                    <button type="submit">Log In</button>
+                    
+                    
+                    <button type="submit" >Log In</button>
+                    
                 </form>
                 <div className="bottom-link">
                     Don't have an account?

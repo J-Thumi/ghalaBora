@@ -4,7 +4,7 @@ import {FaGithub} from "react-icons/fa"
 import { FaTwitter } from 'react-icons/fa';
 import {FaInstagram} from "react-icons/fa"
 
-import logo from './logo.jpeg'
+import logo from '../images/logo.jpeg'
 const Footer = () => {
   return (
     <footer id='footer'>
