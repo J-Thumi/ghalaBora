@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/no-unescaped-entities */
+
 import {motion} from 'framer-motion'
 import john from '../images/john.png'
 import joe from '../images/joe.png'
@@ -19,7 +20,7 @@ const Team = () => {
       <h1
       >Meet the Team</h1>
       <div className="row">
-          <div className="campus-col">
+          <div className="team-col">
             {/* '../images/bene.jpg ' */}
               <img src={bene} alt="test"/>
               <div className="layer">
@@ -27,35 +28,35 @@ const Team = () => {
                   <p>Team Lead <br />Technical Researcher <br /> Backend Developer</p>
               </div>
           </div>
-          <div className="campus-col">
+          <div className="team-col">
               <img src={theo} alt="test"/>
               <div className="layer">
                   <h3>Theophilus Korir</h3>
                   <p>Market Researcher <br />Frontend Developer</p>
               </div>
           </div>
-          <div className="campus-col">
+          <div className="team-col">
               <img src={joe} alt="test"/> 
               <div className="layer">
                   <h3>Josphat Thumi</h3>
                   <p>Product Researcher<br />Frontend Developer</p>
               </div>
           </div>
-          <div className="campus-col">
+          <div className="team-col">
               <img src={lelgo} alt="test"/>
               <div className="layer">
                   <h3>Isaac Lelgo</h3>
                   <p>Product Researcher<br />Backend Developer</p>
               </div>
           </div>
-          <div className="campus-col">
+          <div className="team-col">
               <img src={lee} alt="test"/>
               <div className="layer">
                   <h3>Lee Thiong'o</h3>
                   <p>IoT Programmer</p>
               </div>
           </div>
-          <div className="campus-col">
+          <div className="team-col">
               <img src={john} alt="test"/>
               <div className="layer">
                   <h3>John Kibet</h3>

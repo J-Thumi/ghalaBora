@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Signup = () => {
   return (
@@ -20,7 +20,7 @@ const Signup = () => {
             </div>
             <div className="policy-text">
                 <input type="checkbox" id="policy"/>
-                <label for="policy">
+                <label htmlFor="policy">
                     I agree the
                     <a href="#" className="option">Terms & Conditions</a>
                 </label>

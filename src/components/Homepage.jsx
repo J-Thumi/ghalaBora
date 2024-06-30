@@ -1,5 +1,4 @@
-import React from 'react'
-// import joe from '../images/joe.png'
+
 import {motion} from 'framer-motion'
 
 const container=(delay)=>({
@@ -12,11 +11,7 @@ const container=(delay)=>({
   })
 
 const Homepage = () => {
- 
 
-const bene='../images/bene'
-
-    // const bene=require('./bene.jpg')
   return (
     <div>
        <section id="Home" className="home lazy">

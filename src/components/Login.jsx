@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/no-unescaped-entities */
+
 
 const Login = () => {
 
@@ -19,7 +20,7 @@ const Login = () => {
                 <p>Please log in using your personal information to stay connected with us.</p>
             </div> */}
             <div className="form-content">
-                <h2>LOGIN</h2>
+                <h2>Login</h2>
                 <form action="#">
                     <div className="input-field">
                         <input type="text" required/>

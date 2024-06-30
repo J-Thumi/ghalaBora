@@ -1,6 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
 
+import { motion } from 'framer-motion'
 
 const container=(delay)=>({
     hidden:{x:-100,opacity:0},
@@ -13,7 +12,7 @@ const container=(delay)=>({
 
 const Features = () => {
   return (
-    <section className="course" id="services">
+    <section className="services" id="services">
       <motion.h1 variants={container(0.5)}
           initial="hidden"
           animate='visible'>Our System Offers:</motion.h1>
@@ -24,7 +23,7 @@ const Features = () => {
           Optimization of your operations, enhancing transparency, and building trust, all with our state-of-the-art bean quality control system.
       </motion.p>
       <div className="row">
-          <div className="course-col">
+          <div className="service-col">
               <motion.h3
                whileInView={{opacity:1,x:0}}
                initial={{opacity:0,x:100}}
@@ -37,7 +36,7 @@ const Features = () => {
                   Ditch the manual checks! This system tracks the weight of your produce, allowing early spoilage detection.  With early intervention, you can minimize losses and maintain consistent bean quality effortlessly. Embrace the future of bean management and guarantee the best for your customers with our advanced IoT solution.
               </motion.p>
           </div>
-          <div className="course-col">
+          <div className="service-col">
               <motion.h3
                whileInView={{opacity:1,x:0}}
                initial={{opacity:0,x:100}}
@@ -51,7 +50,7 @@ const Features = () => {
                   Our system utilizes high-precision sensors, designed for effortless installation, to monitor weight, temperature, humidity, and CO<sub>2</sub> levels, offering a comprehensive view of bean quality. Say goodbye to tangled wires and complicated connections. Our sensors communicate wirelessly, allowing for flexible placement and hassle-free installation.
               </motion.p>
           </div>
-          <div className="course-col">
+          <div className="service-col">
               <motion.h3
                whileInView={{opacity:1,x:0}}
                initial={{opacity:0,x:100}}
