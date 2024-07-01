@@ -10,7 +10,7 @@ const Services = () => {
     whileInView={{opacity:1,x:0}}
               initial={{opacity:0,x:100}}
               transition={{duration:1.5}}
-              className="contributors" id="features">
+              className="features" id="features">
       <motion.h1
        whileInView={{opacity:1,x:0}}
        initial={{opacity:0,x:100}}
@@ -22,7 +22,7 @@ const Services = () => {
       transition={{duration:1.5}}
       >Unleash the brilliance of top-tier bean quality control.</motion.p>
       <div className="row">
-          <div className="contributors-col">
+          <div className="features-col">
              <motion.div
              whileInView={{opacity:1,x:0}}
              initial={{opacity:0,x:100}}
@@ -39,7 +39,7 @@ const Services = () => {
               transition={{duration:1.5}}
               >Say goodbye to tangled wires and complicated connections. Our sensors communicate wirelessly, allowing for flexible placement and hassle-free installation.</motion.p>
           </div>
-          <div className="contributors-col">
+          <div className="features-col">
             <motion.div
              whileInView={{opacity:1,x:0}}
              initial={{opacity:0,x:100}}
@@ -57,7 +57,7 @@ const Services = () => {
        transition={{duration:1.5}}
        >As your business grows, our wireless system grows with you. Add more sensors as needed without the hassle of running additional cables or reconfiguring your setup. Our wireless solution scales effortlessly to meet your evolving needs.</motion.p>
           </div>
-          <div className="contributors-col">
+          <div className="features-col">
             <motion.div
              whileInView={{opacity:1,x:0}}
              initial={{opacity:0,x:100}}

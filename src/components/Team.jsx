@@ -16,7 +16,7 @@ const Team = () => {
     whileInView={{opacity:1,x:0}}
     initial={{opacity:0,x:-100}}
     transition={{duration:1.5}}
-    className="campus" id="team">
+    className="team" id="team">
       <h1
       >Meet the Team</h1>
       <div className="row">

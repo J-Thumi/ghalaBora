@@ -36,7 +36,7 @@ const Features = () => {
                   Ditch the manual checks! This system tracks the weight of your produce, allowing early spoilage detection.  With early intervention, you can minimize losses and maintain consistent bean quality effortlessly. Embrace the future of bean management and guarantee the best for your customers with our advanced IoT solution.
               </motion.p>
           </div>
-          <div className="service-col">
+          <div className="service-col bg-blue">
               <motion.h3
                whileInView={{opacity:1,x:0}}
                initial={{opacity:0,x:100}}
