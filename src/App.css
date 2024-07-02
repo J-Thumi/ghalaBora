@@ -20,7 +20,17 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 70svh;
+  min-height: 60svh;
+  background-color: #f2f2f2;
+}
+.main::after{
+  content: '';
+  position: absolute;
+  left: 20%;
+  bottom: 0;
+  width: 60%; /* Adjust this value to change the length of the border */
+  border-bottom: 1px solid grey; /* Adjust the width and color of the border */
+
 }
 
 /*nav*/
@@ -159,8 +169,8 @@ header {
 }
 .text-box h1{
   color: black;
-  font-size: 20px;
-  width: fit-content;
+  font-size: 30px;
+  width: 300px;
 }
 .text-box p{
  width: 400px;

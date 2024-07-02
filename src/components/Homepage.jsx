@@ -22,15 +22,17 @@ const Homepage = () => {
           variants={container(0.1)}
           initial="hidden"
           animate='visible'
-          >Smarten Up Your Agriculture</motion.h1>
+          >Make monitoring hassle-free</motion.h1>
           <motion.p
           variants={container(0.2)}
           initial="hidden"
           animate='visible'>
-              Our advanced real-time quality control system goes beyond simple weight measurement to ensure the highest standards for legumes. Utilizing cutting-edge technology, it accurately detects defects, size variations, moisture content, and foreign materials, guaranteeing consistency, safety, and superior quality in every batch.
+              Our advanced real-time quality control ensures the highest quality for legumes. Utilizing cutting-edge technology, it accurately detects defects, size variations, moisture content, and foreign materials, guaranteeing consistency, safety, and superior quality in every batch.
           </motion.p>
           {/* <a href="#" className="hero-btn">Learn more</a> */}
       </div>
+
+      <img src='../images/Img1'/>
   </section>
 
 
