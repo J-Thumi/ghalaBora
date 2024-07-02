@@ -1,8 +1,8 @@
 
 import { motion } from 'framer-motion'
-import cloud from '../images/cloud.jpg'
-import scale from '../images/scalee.jpg'
-import wireless from '../images/wireless.jpg'
+import cloud from '../../images/cloud.jpg'
+import scale from '../../images/scalee.jpg'
+import wireless from '../../images/wireless.jpg'
 
 const Services = () => {
   return (

@@ -1,7 +1,7 @@
 
 import {motion} from 'framer-motion'
-import jkuat from '../images/jkuat.jpg'
-import jhub from '../images/jhub.jpg'
+import jkuat from '../../images/jkuat.jpg'
+import jhub from '../../images/jhub.jpg'
 
 
 

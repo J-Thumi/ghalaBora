@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import {motion} from 'framer-motion'
-import john from '../images/john.png'
-import joe from '../images/joe.png'
-import lelgo from '../images/lelgo.png'
-import bene from '../images/bene.png'
-import lee from '../images/lee.png'
-import theo from '../images/theo.png'
+import john from '../../images/john.png'
+import joe from '../../images/joe.png'
+import lelgo from '../../images/lelgo.png'
+import bene from '../../images/bene.png'
+import lee from '../../images/lee.png'
+import theo from '../../images/theo.png'
 
 
 

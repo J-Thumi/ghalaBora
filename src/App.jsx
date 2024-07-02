@@ -1,23 +1,26 @@
 
 import './App.css'
-import Nav from './components/Nav'
-import Team from './components/Team'
-import Features from './components/Features'
-import Collaborators from './components/Collaborators'
-import Footer from './components/Footer'
-import GhalaBora from './components/GhalaBora'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LandingPageIndex from './components/landingpage/landingpageindex'
+
+
+
 function App() {
  
 
   return (
-    <main>
-      <Nav /> 
-      <GhalaBora/>
-      <Features/>
-      <Team/>
-      <Collaborators/>
-      <Footer/>
-    </main>
+    <Router>
+      <Routes>
+        <Route path='/' element={<LandingPageIndex/>}/>
+        <Route path='/login' element={''}/>
+        <Route path='/home' element={''}/>
+        <Route path='/profile' element={''}/>
+        <Route path='/settings' element={''}/>
+      </Routes>
+
+    </Router>
+    
+    
   )
 }
 
