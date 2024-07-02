@@ -1,5 +1,6 @@
 
 import logo from '../../images/logo.jpeg'
+import { Link } from 'react-router-dom';
 const Nav = () => {
 
 
@@ -27,9 +28,9 @@ const login=()=>{
                 <li><a href="#features">Features</a></li>
                 <li><a href="#collaborators">Collaborators</a></li>
             </ul>
+            <Link to='/login'><button className="login-btn" >Login</button></Link>
 
-
-            <button className="login-btn" onClick={login}>Login</button>
+            
         </nav>
     </header>
     </div>
