@@ -26,7 +26,7 @@ header {
   max-width: 100%;
   margin: 0;
   justify-content: space-between;
-  background-color: #007031;
+  background-color: transparent;
   color:black
 }
 .navbar .logo {
@@ -64,7 +64,7 @@ header {
 .navbar .login-btn {
   border: none;
   outline: none;
-  background: #05ce5cb6;
+  background: #22490d;
   color: white;
   font-size: .9rem;
   font-weight: 550;
@@ -144,11 +144,17 @@ header {
 .home{
   width: 80%;
   display: flex;
+  position: relative;
   flex-direction: row;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-top: 2rem;
+  left: 1rem;
 }
+
 .home img{
   width: 400px;
   height: 400px;
@@ -162,7 +168,17 @@ header {
   color: black;
   font-size: 30px;
   width: 300px;
+  padding: 1rem;
 }
+.text-box h1::after{
+  content: '';
+  position: absolute;
+  left: 15%;
+  bottom: 50%;
+  width: 10%; /* Adjust this value to change the length of the border */
+  border-bottom: 3px solid #1b320f; /* Adjust the width and color of the border */
+}
+
 .text-box p{
  width: 400px;
  color: black;
@@ -172,7 +188,7 @@ header {
   content: '';
   position: absolute;
   left: 20%;
-  bottom: 0;
+  bottom: -5%;
   width: 60%; /* Adjust this value to change the length of the border */
   border-bottom: 1px solid grey; /* Adjust the width and color of the border */
 }
@@ -343,10 +359,10 @@ nav .fa-solid {
 
 .collaborators-col {
   flex-basis: 44%;
- box-shadow: .2px .2px 7px;
+ box-shadow: .2px .2px 1px;
   margin-bottom: 5%;
   text-align: left;
-  background-image: radial-gradient(#43A047 0%,#53AA57 20%, #71BD74 70%, #81C784 100% );
+  background-color: #efefef;
   padding: 25px;
   display: flex;
 }
@@ -398,12 +414,17 @@ nav .fa-solid {
   text-align: center;
 }
 .prob h1{
-  font-size: 20px;
+  font-size: 30px;
+  position: relative;
+  left: 0;
   color: black;
 }
 .prob p{
+  position: relative;
   width: 500px;
-  color: black
+  color: black;
+  left: 0;
+
 }
 /*team*/
 .team{
@@ -475,7 +496,7 @@ nav .fa-solid {
 footer {
   color: black;
   padding: 10px 20px;
-  background-color: #edf0f3;
+  background-color: #1b320f;
   box-shadow: 0px 6px 10px;
   font-size: 12px;
   
@@ -507,7 +528,7 @@ footer {
   color: var(--white-color);
 }
 .footer_section .useful_links ul li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .footer_section .contact_us ul li {
   margin: 20px 0;
@@ -528,7 +549,7 @@ footer {
 
 
 
-
+/*LOGIN*/
 
 .login {
   display: flex;
