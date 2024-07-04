@@ -15,7 +15,7 @@ const container=(delay)=>({
                  
 const Problem = () => {
   return (
-    <section id="Problem">
+    <section id="Problem" className="problem">
 <div className="prob">
   <motion.h1
   variants={container(0.3)}

@@ -1,6 +1,7 @@
 
 import {motion} from 'framer-motion'
-import farmer from '../../images/person1.jpg'
+import Nav from './Nav'
+
 const container=(delay)=>({
     hidden:{x:-100,opacity:0},
     visible:{
@@ -15,6 +16,7 @@ const Homepage = () => {
   return (
     <div>
        <section id="Home" className="home lazy">
+        <Nav/>
         <div>
         <div className="text-box">
             
@@ -22,7 +24,7 @@ const Homepage = () => {
             variants={container(0.1)}
             initial="hidden"
             animate='visible'
-            >Make monitoring hassle-free</motion.h1>
+            >Making monitoring hassle-free</motion.h1>
             <motion.p
             variants={container(0.2)}
             initial="hidden"
@@ -31,30 +33,7 @@ const Homepage = () => {
             </motion.p>
             
           </div>
-
-          <div className="prob">
-  <motion.h1
-  variants={container(0.3)}
-  initial="hidden"
-  animate='visible'>Problem</motion.h1>
-  <motion.p
-  variants={container(0.4)}
-  initial="hidden"
-  animate='visible'>Traditional quality 
-      control systems are 
-      plagued by inefficiencies
-       due to manual inspections, 
-      which are labor-intensive and 
-      error-prone, leading to
-       inconsistent data and 
-      delayed issue detection</motion.p>
-</div>
-
-
-
         </div>
-          
-          <img src={farmer}/>
        </section>
 
 

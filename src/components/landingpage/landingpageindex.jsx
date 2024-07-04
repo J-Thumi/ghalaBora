@@ -1,17 +1,17 @@
-import React from 'react'
+
 import Footer from './Footer'
 import Collaborators from './Collaborators'
 import Team from './Team'
 import Homepage from './Homepage'
-import Nav from './Nav'
 import Features from './Features'
+import Problem from './Problem'
 
 
 const LandingPageIndex = () => {
   return (
     <main>
-        <Nav/>
       < Homepage/>
+      <Problem/>
       <Features/>
       <Team/>
       <Collaborators/>

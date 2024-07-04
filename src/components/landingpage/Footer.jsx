@@ -3,7 +3,7 @@ import {FaLinkedin} from "react-icons/fa"
 import {FaGithub} from "react-icons/fa"
 import {FaInstagram} from "react-icons/fa"
 
-import logo from '../../images/logo.jpeg'
+import logo from '../../images/Logo_maker_project-removebg-preview 1.svg'
 const Footer = () => {
   return (
     <footer id='footer'>
@@ -12,7 +12,6 @@ const Footer = () => {
           <div className="footer_logo">
             <a href="index.html">
               <img src={logo} alt="Coffee Logo" />
-              <h2>GhalaBora</h2>
             </a>
           </div>
           <div className="useful_links">
@@ -43,17 +42,17 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="follow_us">
+        </div>
+        <div className="follow_us">
             <h3>Follow</h3>
             {/* <i className="bx bxl-facebook-circle"></i>
             <i className="bx bxl-twitter"></i>
             <i className="bx bxl-instagram-alt"></i> */}
 
-<a href= "https://github.com/J-Thumi">   <FaGithub /></a>
-        <a href="https://www.instagram.com/__thumi/">   <FaInstagram /></a>
-        <a href="https://www.linkedin.com/in/josphat-thumi-0b0795308/">   <FaLinkedin /></a>
+            <a href= "https://github.com/J-Thumi">   <FaGithub /></a>
+            <a href="https://www.instagram.com/__thumi/">   <FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/josphat-thumi-0b0795308/">   <FaLinkedin /></a>
           </div>
-        </div>
       </div>
     </footer>
  
