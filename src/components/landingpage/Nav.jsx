@@ -26,7 +26,7 @@ const Nav = () => {
     <div>
       
     <header>
-        <nav className="navbar">
+        <nav className="navbar-landing">
             <a href="#" className="logo">
                 <img src={logo} alt="logo"/>
             </a>

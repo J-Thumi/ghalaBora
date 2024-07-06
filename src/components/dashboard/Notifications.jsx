@@ -2,7 +2,16 @@
 
 const Notifications = () => {
   return (
-    <div></div>  
+    <div className="notifications">   
+      <div className="notification-message">
+      </div>
+      <div className="notification-message">
+      </div>
+      <div className="notification-message">
+      </div>
+      <div className="notification-message">
+      </div>
+     </div>  
   )
 }
 

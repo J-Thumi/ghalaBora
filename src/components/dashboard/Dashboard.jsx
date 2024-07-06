@@ -1,10 +1,12 @@
-import React from 'react'
+import DashNav from "./DashNav"
+import OverviewComponent from "./Overview"
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashborad
-    </div>
+    <main className="dashboard">
+      <DashNav/>
+      <OverviewComponent/>   
+    </main>
   )
 }
 
