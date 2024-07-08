@@ -16,7 +16,7 @@ const OverviewComponent = () => {
         <div className="overview-card">
           <p>Temperature</p>
           <div className="info-div">
-            <p className="info">20 <span className="unit">°C</span><span className="deviation">°C</span></p>
+            <p className="info">20 <span className="unit">°C</span><span className="deviation">-3°C</span></p>
           </div>
         </div>
         <div className="overview-card">

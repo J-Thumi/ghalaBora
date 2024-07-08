@@ -87,26 +87,6 @@ header {
 .navbar .login-btn:hover {
   border-bottom: #1b320f solid 2px;
 }
-/*dashnav*/
-.dashnav{
-  display: flex;
-  flex-direction: row;
-  background-color: #1b320f;
-}
-.dashnav img{
-  width: 70px;
-  height: 70px;
-  padding: 1rem,;
-  margin: 0;
-}
-.dashnav .user{
-  width: 70px;
-  height: 70px;
-  padding: 1rem,;
-  margin: 0;
-
-}
-
 
 
 @media (max-width: 950px) {
@@ -691,10 +671,72 @@ button:hover {
 }
 
 /*DASHBOARD*/
+
+/*dashnav*/
+.dashnav{
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  background-color: #1b320f;
+  justify-content: space-between;
+}
+.dashnav img{
+  width: 50px;
+  height: 50px;
+  padding: .4rem,;
+  margin: 0;
+  color: #efefef;
+}
+.dashnav .user{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+}
+
+/*dash*/
+.dashboard{
+  display: flex;
+  flex-direction: column;
+  width: 100svw;
+  position: relative;
+
+}
 .overview{
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  position: relative;
+  top: 10px;
+  margin-left:7rem ;
+  margin-right:7rem ;
+}
+.overview select{
+  background-color: grey;
+  border: 0px solid rgba(255, 255, 255, 0);
+  width: 400px;
+}
+.overview select:focus , .overview select:active{
+  border: 0px solid white;
+}
+ .overview select:active{
+  border: 0px solid white;
+
+ }
+.overview-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  background-color: #fff;
+  gap: 1rem;
+  position: relative;
+  top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
 }
 .overview-card{
   display: flex;
@@ -703,14 +745,27 @@ button:hover {
   box-shadow: .5px .5px 1px;
   width: 300px;
   height: 200px;
+  border: 0px solid white;
 }
 .info-div{
   display: flex;
   flex-direction: column;
 }
+
 .info-div .info{
-  font-size: 10rem;
+  font-size: 5rem;
 }
-.info-div .dev{
+.info-div .unit{
+  font-size: 1rem;
+  font-weight: 600;
+
+}
+.info-div .deviation{
+  font-weight: 600;
   color: red;
+  font-size: 1rem;
 }
+
+
+
+/**/
