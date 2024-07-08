@@ -1,5 +1,5 @@
 
-import logo from '../../images/Logo_maker_project-removebg-preview 1.svg'
+import logo from '../../images/Logo.svg'
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 

@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import Logo from "../../images/Logo_maker_project-removebg-preview 1.svg"
+import Logo from "../../images/LogoSymb.svg"
 
 
 const Login = () => {

@@ -3,7 +3,7 @@ import {FaLinkedin} from "react-icons/fa"
 import {FaGithub} from "react-icons/fa"
 import {FaInstagram} from "react-icons/fa"
 
-import logo from '../../images/Logo_maker_project-removebg-preview 1.svg'
+import logo from '../../images/Logo.svg'
 const Footer = () => {
   return (
     <footer id='footer'>

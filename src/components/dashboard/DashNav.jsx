@@ -1,4 +1,4 @@
-import logo from '../../images/Logo_maker_project-removebg-preview 1.svg'
+import logo from '../../images/Logo.svg'
 import { FaUser } from "react-icons/fa";
 
 const DashNav = () => {
