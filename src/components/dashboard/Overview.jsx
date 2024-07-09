@@ -3,15 +3,6 @@
 const OverviewComponent = () => {
   return (
     <section className="overview">
-
-      <select className="island-dropdown">
-           <option value="Island D">Island D</option>
-           <option value="Island C">Island C</option>
-           <option value="Island B">Island B</option>
-           <option value="Island A">Island A</option>
-      </select>
-
-      <h3 className="oveview-label">Overview</h3>
       <div className="overview-container">
         <div className="overview-card">
           <p>Temperature</p>

@@ -704,66 +704,87 @@ button:hover {
   flex-direction: column;
   width: 100svw;
   position: relative;
-
+}
+.dashboard-section{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 .overview{
   display: flex;
   flex-direction: column;
-  background-color: #fff;
   position: relative;
   top: 10px;
-  margin-left:7rem ;
-  margin-right:7rem ;
+  justify-content: center;
+  align-items: center;
+  width: 100svw;
 }
-.overview select{
+ select{
   background-color: grey;
   border: 0px solid rgba(255, 255, 255, 0);
   width: 400px;
+  padding: .7rem;
+  border-radius: 5px;
+  position: relative;
+  top: 5px;
+  
 }
-.overview select:focus , .overview select:active{
+select:focus , select:active{
   border: 0px solid white;
-}
- .overview select:active{
+} 
+select:active{
   border: 0px solid white;
 
  }
 .overview-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  background-color: #fff;
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
   position: relative;
-  top: 1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-
+  top:0;
+  padding: 1rem;
+  padding-top: 0;
+  width: 70svw;
+  justify-content: space-between;
 }
 .overview-card{
   display: flex;
   flex-direction: column;
   background-color: #efefef;
   box-shadow: .5px .5px 1px;
-  width: 300px;
-  height: 200px;
+  width: 250px;
+  height: 80px;
   border: 0px solid white;
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+  top: 2rem;
 }
 .info-div{
   display: flex;
   flex-direction: column;
 }
-
+.overview-card p{
+  font-weight: 550;
+}
 .info-div .info{
-  font-size: 5rem;
+  font-size: 1.2rem;
 }
 .info-div .unit{
   font-size: 1rem;
   font-weight: 600;
+  position: relative;
+  left: 0;
 
 }
 .info-div .deviation{
   font-weight: 600;
   color: red;
   font-size: 1rem;
+  position: relative;
+  left: 60%;
 }
 
 
