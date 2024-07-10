@@ -722,21 +722,20 @@ button:hover {
   width: 100svw;
 }
  select{
-  background-color: grey;
-  border: 0px solid rgba(255, 255, 255, 0);
+  background-color: #efefef;
+  border: 1px solid rgba(255, 255, 255, 0);
   width: 400px;
   padding: .7rem;
   border-radius: 5px;
   position: relative;
-  top: 5px;
-  
+  top: 5px; 
+  color: black;
 }
 select:focus , select:active{
   border: 0px solid white;
 } 
 select:active{
   border: 0px solid white;
-
  }
 .overview-container{
   display: flex;
@@ -789,4 +788,28 @@ select:active{
 
 
 
-/**/
+/*charts*/
+.chart-section{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  top: 3rem;
+  gap: 115px;
+}
+
+.chart-card{
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+  box-shadow: .5px .5px 1px;
+  width: 400px;
+  height: 250px;
+  border: 0px solid white;
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+  top: 2rem;
+}

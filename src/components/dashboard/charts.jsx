@@ -124,14 +124,13 @@ const ChartsComponent = () => {
   ];
 
   return (
-    <div>
-      <h1>Monitoring Dashboard</h1>
-      <div>
-        <h2>Temperature Chart</h2>
+    <div className="chart-section">
+      <div className='chart-card'>
+        <h5>Temperature Chart</h5>
         <TemperatureChart data={data} />
       </div>
-      <div>
-        <h2>Humidity Chart</h2>
+      <div className='chart-card'>
+        <h5>Humidity Chart</h5>
         <HumidityChart data={data} />
       </div>
     </div>
