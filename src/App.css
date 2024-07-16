@@ -652,6 +652,32 @@ button:hover {
   margin-right: 1rem;
 
 }
+/* Sensor status */
+.sensor-status{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  position: relative;
+  gap: 1rem;
+}
+.sensor-status h6{
+  margin: 0;
+  width: fit-content;
+  padding: .5rem;
+}
+.sensor{
+  display: flex;
+  flex-direction: row;
+  padding: .3rem;
+}
+.sensor p{
+  width: fit-content;
+}
+.sensor .status{
+  padding-left: .3rem;
+  padding-right: .3rem;
+  color: green;
+}
 
 /*dash*/
 .dashboard{
@@ -740,6 +766,20 @@ select:active{
   position: relative;
   left: 60%;
 }
+/* report page */
+
+.generate-report{
+  background-color: #1b320f;
+  padding: .5rem ;
+  border: 0px;
+  outline: 0px;
+  position: relative;
+  top: 4rem;
+  left: 27%;
+  text-decoration: none;
+  color: white;
+  font-weight: 550;
+}
 
 
 
@@ -751,7 +791,7 @@ select:active{
   padding: 1rem;
   justify-content: center;
   align-items: center;
-  top: 3rem;
+  top: 1rem;
   gap: 115px;
 }
 
