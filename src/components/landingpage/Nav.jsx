@@ -16,7 +16,7 @@ const Nav = () => {
   }, []);
 
   const handleClick = (event,hash) => {
-    event.preventDefault()// Prevent the default anchor behavior
+    //event.preventDefault()// Prevent the default anchor behavior
     // Update the state and local storage with the new active link
     setActiveLink(hash);
     localStorage.setItem('activeLink', hash);

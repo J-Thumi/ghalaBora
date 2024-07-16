@@ -26,8 +26,9 @@ header {
   max-width: 100%;
   margin: 0;
   justify-content: space-between;
-  background-color: transparent;
-  color:black
+  @container style(background-color: transparent){
+    color: black;
+  }
 }
 .navbar-landing .logo {
   gap: 10px;
@@ -89,11 +90,6 @@ header {
 }
 
 
-@media (max-width: 950px) {
- 
-  
-}
-
 /*home*/
 
 .home{
@@ -118,7 +114,7 @@ header {
 .text-box h1{
   position: relative;
   color: black;
-  font-size: 40px;
+  font-size: 35px;
   width: 500px;
   padding: 1rem;
 }
@@ -136,7 +132,8 @@ header {
  color: black;
  position: relative;
  left: 3%;
- font-size: 17px;
+ font-size: 15px;
+ font-weight: 550;
 }
 
 .home::after{
@@ -151,36 +148,6 @@ header {
 
 nav .fa-solid {
   display: none;
-}
-
-@media (max-width: 700px) {
-  .text-box h1 {
-      font-size: 20px;
-  }
-  .nav-links {
-      position: absolute;
-      background: rgba(187, 186, 61);
-      height: 100vh;
-      width: 200px;
-      top: 0;
-      right: -200px;
-      text-align: left;
-      z-index: 2;
-      transition: 1s;
-  }
-  .nav-links ul li {
-      display: block;
-  }
-  nav .fa-solid {
-      display: block;
-      color: #fff;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
-  }
-  .nav-links ul {
-      padding: 30px;
-  }
 }
 
 
@@ -247,12 +214,6 @@ nav .fa-solid {
   color: black;
   position: relative;
   left: 0;
-}
-
-@media (max-width: 700px) {
-  .row {
-      flex-direction: column;
-  }
 }
 
 .services {
@@ -330,6 +291,7 @@ nav .fa-solid {
   color: black;
 }
 
+/* Collaborators */
 .contributors-col h3 {
   position: relative;
   margin-top: 16px;
@@ -376,14 +338,6 @@ nav .fa-solid {
   text-decoration: none;
   cursor: pointer;
 }
-
-@media (max-width: 700px) {
-  .collaborators-col img {
-      margin-left: 0px;
-      margin-right: 15px;
-  }
-}
-
 
 /*team*/
 .team{
@@ -545,6 +499,7 @@ footer {
 .login {
   display: flex;
   min-height: 100vh;
+  place-items: center;
   width: 100%;
   color: #000;
 }
@@ -561,7 +516,7 @@ footer {
 .wrapper {
   position: relative;
   top: 10px;
-  left: 90%;
+  left: 25%;
   width: 400px;
   height: 96svh;
   border-radius: 8px;
@@ -812,4 +767,120 @@ select:active{
   border-radius: 5px;
   position: relative;
   top: 2rem;
+}
+@media (max-width: 1024px) {
+  body{
+    font-size: 13px;
+  }
+  /*homepage*/
+
+  /*login*/
+  .wrapper{
+    width: 400px;
+    height: 90svh;
+    left: 10%;
+  }
+  form img{
+    position: relative;
+    left: 35%;
+    width: 100px;
+    height:100px;
+    padding: .5rem,;
+    margin: 0;
+  }
+ /* Landing page */
+ .home{
+  height: 90svh;
+}
+
+.text-box{
+  top: 15%;
+  left: 10%;
+}
+.text-box h1{
+  font-size: 25px;
+  width: 400px;
+  padding: .5rem;
+}
+.text-box h1::after{
+  content: '';
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  width: 10%; /* Adjust this value to change the length of the border */
+  border-bottom: 3px solid #1b320f; /* Adjust the width and color of the border */
+}
+
+.text-box p{
+ left: 3%;
+ font-size: 14px;
+ font-weight: 550;
+}
+
+nav .fa-solid {
+  display: none;
+}
+.navbar-landing  .links {
+  display: none;
+}
+
+/*problem*/
+.prob{
+  width: 350px;
+  height: 300px;
+  top: 1rem;
+  left: 30px;
+}
+.prob h1{
+  font-size: 25px;
+  position: relative;
+  left:0;
+  width: fit-content;
+  padding: .5rem;
+}
+
+.prob p{
+  width: 300px;
+  padding: .5rem;
+
+}
+/* Collaborators */
+
+.collaborators {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+/*features*/
+
+.row{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer */
+.footer_section .footer_logo{
+  left:0%;
+
+}
+.footer_section .footer_logo a img {
+  width: 150px;
+  height: 150px;
+  
+}
+.footer_section .follow_us{
+  position: relative;
+  left: -30px;
+}
+
+  
+}
+@media (max-width: 564px) {
+  
 }
