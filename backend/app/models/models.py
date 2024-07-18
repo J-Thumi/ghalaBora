@@ -1,16 +1,17 @@
 from app.database import Base
 from sqlalchemy import Column, Boolean, DateTime, ForeignKey, Float, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
 class Users(Base):
    __tablename__ = "users"
 
    user_id = Column(Integer, primary_key=True, index=True)
-   user_name = Column(String)
+   user_name = Column(String, nullable=False)
    user_email = Column(String)
-   user_phone_number = Column(String, unique=True)
-   user_password = Column(String)
+   user_phone_number = Column(String, nullable=False, unique=True)
+   user_password = Column(String, nullable=False)
+
+   sensors = relationship("Sensors", back_populates="user")
 
 class Sensors(Base):
    __tablename__ = "sensors"
@@ -20,7 +21,8 @@ class Sensors(Base):
    sensor_name = Column(String)
    sensor_location = Column(String)
 
-   user = relationship("Users", backref="sensor")
+   user = relationship("Users", back_populates="sensors")
+   sensor_readings = relationship("SensorReading", back_populates="sensor")
 
 class SensorReading(Base):
    __tablename__ = "sensor_readings"
@@ -36,3 +38,5 @@ class SensorReading(Base):
    motion = Column(Boolean, nullable=False)
    smoke = Column(Float, nullable=False)
    temp = Column(Float, nullable=False)
+
+   sensor = relationship("Sensors", back_populates="sensor_readings")

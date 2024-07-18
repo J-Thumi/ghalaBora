@@ -4,3 +4,4 @@ passlib
 jwt
 sqlalchemy
 psycopg2-binary
+logging

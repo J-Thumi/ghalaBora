@@ -20,5 +20,5 @@ class SensorReadingCreate(BaseModel):
    class Config:
       orm_mode = True
 
-class SensorReadingReport():
-   data: List[SensorReadingBase]
+class SensorReadingReport(BaseModel):
+   data: List[SensorReadingCreate]
