@@ -30,5 +30,6 @@ class UserUpdate(BaseModel):
       orm_mode = True
 
 class UserLogin(BaseModel):
+   user_email: str
    user_name: str
    user_password: str

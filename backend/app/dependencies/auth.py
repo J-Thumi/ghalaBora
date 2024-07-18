@@ -1,4 +1,4 @@
-from app.core.security import verify_password
+from app.core.security import create_access_token, verify_password
 from app.database import get_db
 from app.models import models
 from app.schemas import users
@@ -19,4 +19,8 @@ def authenticate_user(user: users.UserLogin, db: Session = Depends(get_db)):
          detail="Incorrect password"
       )
    
-   return db_user
+   access_token = create_access_token(data={"sub": user.user_email})
+   return {
+      "access_token": access_token,
+      "token_type": "bearer"
+   }

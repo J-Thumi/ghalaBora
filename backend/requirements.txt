@@ -5,3 +5,4 @@ jwt
 sqlalchemy
 psycopg2-binary
 logging
+python-jose
