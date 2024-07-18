@@ -7,7 +7,8 @@ class UserBase(BaseModel):
    user_email: EmailStr
    user_phone_number: str
 
-class UserCreate(UserBase):
+class UserCreate(BaseModel):
+   user_details: UserBase
    user_password: str
 
 class User(BaseModel):
@@ -23,7 +24,11 @@ class ShowUser(BaseModel):
    sensors: List[SensorReadingCreate]
 
 class UserUpdate(BaseModel):
-   user_details: UserBase
+   user_details: UserCreate
 
    class Config:
       orm_mode = True
+
+class UserLogin(BaseModel):
+   user_name: str
+   user_password: str
