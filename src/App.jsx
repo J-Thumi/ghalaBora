@@ -15,9 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPageIndex/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/home' element={<Dashboard/>}/>
-        <Route path='/profile' element={''}/>
-        <Route path='/settings' element={''}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/report' element={<ReportGenerationPage/>}/>
       </Routes>
 
