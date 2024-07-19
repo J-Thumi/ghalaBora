@@ -1,6 +1,5 @@
 from app.core.security import hash_password
 from app.database import get_db
-from app.routes import login
 from app.models import models
 from app.schemas import users
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -40,6 +39,11 @@ async def get_user_by_email(user_email: str, db: Session = Depends(get_db)):
       )
    
    return db_user
+
+async def get_user_by_user_name(user_name: str, db: Session = Depends(get_db)):
+   if user_name in db:
+      user_dict = db[user_name]
+      return users.UserInDB(**user_dict)
 
 def update_phone_number(user: models.Users, new_phone_number: str, db: Session = Depends(get_db)):
    if new_phone_number:
