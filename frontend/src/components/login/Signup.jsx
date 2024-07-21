@@ -1,6 +1,7 @@
 
 
 const Signup = () => {
+    
   return (
     <div className="form-box signup">
     <div className="form-details">
