@@ -4,6 +4,10 @@ passlib
 jwt
 sqlalchemy
 psycopg2-binary
+psycopg2-connect
 logging
 python-jose
 python-dotenv
+asyncpg
+bcrypt
+pandas

@@ -1,4 +1,4 @@
-from app.schemas.sensor_readings import SensorReadingCreate
+from app.schemas.sensors import SensorCreate
 from pydantic import BaseModel, EmailStr
 from typing import List
 
@@ -7,8 +7,7 @@ class UserBase(BaseModel):
    user_email: EmailStr
    user_phone_number: str
 
-class UserCreate(BaseModel):
-   user_details: UserBase
+class UserCreate(UserBase):
    user_password: str
 
 class User(BaseModel):
@@ -21,7 +20,7 @@ class User(BaseModel):
 class ShowUser(BaseModel):
    user_name: str
    user_email: EmailStr
-   sensors: List[SensorReadingCreate]
+   sensors: List[SensorCreate] = []
 
 class UserUpdate(BaseModel):
    user_details: UserCreate

@@ -1,5 +1,5 @@
 from app.database import Base
-from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Float, Integer, String
+from sqlalchemy import Column, DateTime, ForeignKey, Float, Integer, String
 from sqlalchemy.orm import relationship
 
 class Users(Base):
@@ -7,7 +7,7 @@ class Users(Base):
 
    user_id = Column(Integer, primary_key=True, index=True)
    user_name = Column(String, nullable=False)
-   user_email = Column(String)
+   user_email = Column(String, nullable=False)
    user_phone_number = Column(String, nullable=False, unique=True)
    user_password = Column(String, nullable=False)
 
@@ -29,14 +29,9 @@ class SensorReading(Base):
 
    sensor_reading_id = Column(Integer, primary_key=True, index=True)
    sensor_id = Column(Integer, ForeignKey("sensors.sensor_id"))
-   timestamp = Column(DateTime, nullable=False)
+   timestamp = Column(DateTime, nullable=True)
 
-   co = Column(Float, nullable=False)
-   humidity = Column(Float, nullable=False)
-   light = Column(Boolean, nullable=False)
-   lpg = Column(Float, nullable=False)
-   motion = Column(Boolean, nullable=False)
-   smoke = Column(Float, nullable=False)
-   temp = Column(Float, nullable=False)
+   humidity = Column(Float, nullable=True)
+   temp = Column(Float, nullable=True)
 
    sensor = relationship("Sensors", back_populates="sensor_readings")

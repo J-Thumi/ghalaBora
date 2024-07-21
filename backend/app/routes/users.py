@@ -1,20 +1,17 @@
-from app.core.security import hash_password
+from app.dependencies.hash_password import hash_password
 from app.database import get_db
 from app.models import models
 from app.schemas import users
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-import logging
 
-router = APIRouter(
+user_router = APIRouter(
    prefix="/users",
    tags=["Users"]
 )
 
-logging.basicConfig(filename='error_logs/user_api.log', level=logging.ERROR)
-
-async def get_user(user_id, db: Session = Depends(get_db)):
+def get_user(user_id, db: Session = Depends(get_db)):
    fetched_user = db.query(models.Users).filter(models.Users.user_id == user_id).first()
    if not fetched_user:
       raise HTTPException(
@@ -81,23 +78,17 @@ def update_user_password(user: models.Users, new_password: str, db: Session = De
    
    db.commit()
 
-@router.post("/create-user")
+@user_router.post("/create-user")
 async def create_user(user: users.UserCreate, db: Session = Depends(get_db)):
-   try:
-      new_user = models.Users(**user.model_dump(exclude={"user_password"}))
-      new_user.user_password = hash_password(user.user_password)
-      db.add(new_user)
-      db.commit()
-   except Exception as e:
-      logging.error(f"Error creating user: {e}")
-      raise HTTPException(
-         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-         detail="An error occurred while creating the user. Please try again later."
-      )
+   new_user = models.Users(**user.model_dump(exclude={"user_password"}))
+   new_user.user_password = hash_password(user.user_password)
+   db.add(new_user)
+   db.commit()
+   db.refresh(new_user)
    
    return new_user
 
-@router.put("/{user_id}", response_model=users.User)
+@user_router.put("/{user_id}", response_model=users.User)
 async def update_user(user_id, user_updated: users.UserUpdate, db: Session = Depends(get_db)):
    fetched_user = get_user(user_id, db)
 
@@ -110,3 +101,7 @@ async def update_user(user_id, user_updated: users.UserUpdate, db: Session = Dep
          update_user_password(fetched_user, value, db)
       elif field == "user_name":
          update_user_name(fetched_user, value, db)
+
+@user_router.get("/{user_id}", response_model=users.ShowUser)
+def get_one_user(user_id, db: Session = Depends(get_db)):
+   return get_user(user_id, db)
