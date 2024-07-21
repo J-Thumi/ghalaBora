@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPageIndex/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/dashboard/:userName' element={<Dashboard  />}/>
         <Route path='/report' element={<ReportGenerationPage/>}/>
       </Routes>
 
