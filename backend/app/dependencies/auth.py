@@ -23,5 +23,6 @@ def authenticate_user(user: OAuth2PasswordRequestForm = Depends(), db: Session =
    access_token = create_access_token(data={"sub": user.username})
    return {
       "access_token": access_token,
-      "token_type": "bearer"
+      "token_type": "bearer",
+      "detail": "Success"
    }

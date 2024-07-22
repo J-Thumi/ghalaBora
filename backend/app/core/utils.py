@@ -11,6 +11,7 @@ sensor_name_to_id = {
 }
 
 def csv_processor(csv_file_path: str, db: Session = Depends(get_db)):
+   csv_file_path = r"C:\\Users\bened\Desktop\\Computer Science\\projects\\full-stack-web-apps\\ghalabora_web_app\\ghalaBora\backend\\app\\core\\iot_telemetry_data.csv"
    df = pd.read_csv(csv_file_path)
 
    df = df.drop(columns=["co", "light", "lpg", "motion", "smoke"])
@@ -28,9 +29,7 @@ def csv_processor(csv_file_path: str, db: Session = Depends(get_db)):
    df = df.drop(columns=['device'])
    df.rename(columns={'ts': 'timestamp'}, inplace=True)
 
-   df = df.reset_index(drop=True) 
-
-   df.to_sql('sensor_readings', con=engine, if_exists='append')
+   df.to_sql('sensor_readings', con=engine, if_exists='append', index=True)
 
 
 """ df = pd.read_csv(csv_file_path)
@@ -48,3 +47,4 @@ df.rename(columns={'ts': 'timestamp'}, inplace=True)
 print(df.shape)
 
  """
+
