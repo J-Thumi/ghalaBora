@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect,useState } from "react"
+import { useState } from "react"
 import Logo from "../../images/LogoSymb.svg"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
