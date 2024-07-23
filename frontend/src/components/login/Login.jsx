@@ -32,7 +32,7 @@ const Login = () => {
               <input type="text" 
                onChange={(e)=>setName(e.target.value)}
               required/>
-              <label>Enter your className</label>
+              <label>Enter your name</label>
             </div>
             <div className="input-field">
               <input type="password"
@@ -49,9 +49,9 @@ const Login = () => {
             </div>
             <div className="register">
               <p>Don't have an account? 
-                  <div className="reg"><a href="#" >Register</a></div>   </p>
+                  <span className="reg"><a href="#" >Register</a></span>   </p>
             </div>
-            <input type="Submit" value="Login" className="button"/>
+            <input type="Submit" defaultValue="Login" className="button"/>
           </form>
        </div>
     </main>

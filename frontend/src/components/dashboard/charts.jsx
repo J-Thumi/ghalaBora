@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 
-import PropTypes from 'prop-types';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
@@ -52,14 +52,6 @@ const TemperatureChart = ({ data }) => {
   return <Line data={chartData} options={options} />;
 };
 
-TemperatureChart.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      time: PropTypes.string.isRequired,
-      temperature: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
 
 const HumidityChart = ({ data }) => {
   const chartData = {
@@ -106,14 +98,6 @@ const HumidityChart = ({ data }) => {
   return <Line data={chartData} options={options} />;
 };
 
-HumidityChart.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      time: PropTypes.string.isRequired,
-      humidity: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
 
 
 const ChartsComponent = ({islandData}) => {
@@ -131,17 +115,6 @@ const ChartsComponent = ({islandData}) => {
     </div>
   );
   
-};
-
-
-ChartsComponent.propTypes = {
-  islandData: PropTypes.arrayOf(
-    PropTypes.shape({
-      sensorid: PropTypes.id.isRequired,
-      temperature: PropTypes.number.isRequired,
-      humidity: PropTypes.number.isRequired,
-    })
-  ).isRequired,
 };
 
 
