@@ -600,7 +600,7 @@ h2 {
 .wrapper a:hover {
   text-decoration: underline;
 }
-button {
+.button {
   background: #1b320f;
   color: #000;
   font-weight: 600;
@@ -612,7 +612,7 @@ button {
   border: 2px solid transparent;
   transition: 0.3s ease;
 }
-button:hover {
+.button:hover {
   color: #000;
   border-color: #fff;
 }
@@ -624,6 +624,7 @@ button:hover {
 .reg{
     color: #008080;
 }
+
 
 /*DASHBOARD*/
 

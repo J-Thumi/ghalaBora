@@ -2,6 +2,8 @@
 import PropTypes from 'prop-types';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Register the required components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -114,14 +116,39 @@ HumidityChart.propTypes = {
   ).isRequired,
 };
 
+const useFetchChartData = (url) => {
+  const [data, setData] = useState(() => {
+    const savedData = localStorage.getItem('chartData');
+    return savedData ? JSON.parse(savedData) : [];
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(url);
+      setData(response.data);
+      localStorage.setItem('chartData', JSON.stringify(response.data));
+      setLoading(false);
+    } catch (e) {
+      setError(e.message);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (data.length === 0) {
+      fetchData();
+    }
+  }, [url]);
+
+  return { data, loading, error, refetch: fetchData };
+};
+
 const ChartsComponent = () => {
-  const data = [
-    { time: '10:00', temperature: 22, humidity: 60 },
-    { time: '11:00', temperature: 23, humidity: 62 },
-    { time: '12:00', temperature: 24, humidity: 64 },
-    { time: '13:00', temperature: 25, humidity: 66 },
-    { time: '14:00', temperature: 26, humidity: 68 },
-  ];
+  const { data, loading, error, refetch } = useFetchChartData('/api/chart-data');
+
 
   return (
     <div className="chart-section">

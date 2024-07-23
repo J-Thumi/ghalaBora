@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
 const Login = () => {
-  const[name,setEmail]=useState()
+  const[name,setName]=useState()
   const[password,setPassword]=useState()
   const navigate=useNavigate()
 
   const handleSubmit=(e)=>{
     e.preventDefault()
-    axios.post('http://localhost:3000/login',{name,password})
+    axios.post('http://localhost:8000/login',{name,password})
     .then(result=>{
       console.log(result)
       if(result.data==="success"){
@@ -30,9 +30,9 @@ const Login = () => {
             <h2>Login</h2>
               <div className="input-field">
               <input type="text" 
-               onChange={(e)=>setEmail(e.target.value)}
+               onChange={(e)=>setName(e.target.value)}
               required/>
-              <label>Enter your email</label>
+              <label>Enter your className</label>
             </div>
             <div className="input-field">
               <input type="password"
@@ -47,12 +47,11 @@ const Login = () => {
               </label>
               <a href="#">Forgot password?</a>
             </div>
-            <button type="submit">Log In</button>
             <div className="register">
               <p>Don't have an account? 
                   <div className="reg"><a href="#" >Register</a></div>   </p>
             </div>
-            <input type="Submit" value="Login"/>
+            <input type="Submit" value="Login" className="button"/>
           </form>
        </div>
     </main>
