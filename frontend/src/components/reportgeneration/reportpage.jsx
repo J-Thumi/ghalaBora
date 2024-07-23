@@ -29,7 +29,7 @@ const ReportComponent = () => {
       if (data.length === 0) {
         fetchData();
       }
-    }, [url]);
+    });
   
     return { data, loading, error, refetch: fetchData };
   };
