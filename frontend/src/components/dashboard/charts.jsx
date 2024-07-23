@@ -147,7 +147,22 @@ const useFetchChartData = (url) => {
 };
 
 const ChartsComponent = () => {
-  const { data, loading, error, refetch } = useFetchChartData('/api/chart-data');
+  const { data, loading, error } = useFetchChartData('localhost:8000/get-sensor-reading');
+  
+
+  if(loading){
+    return(
+      <div>
+        Loading....
+      </div>
+    )
+  }
+  if(error){
+    return(
+      <div>Error while loading....</div>
+    )
+  }
+
 
 
   return (
