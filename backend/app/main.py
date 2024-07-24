@@ -5,10 +5,23 @@ from app.routes.sensor_readings import sensor_reading_router
 from app.routes.sensors import sensor_router
 from app.routes.users import user_router
 from fastapi import FastAPI
+from fastapi.middleware import cors
 
 app = FastAPI()
 
 models.Base.metadata.create_all(engine)
+
+allowed_origins = [
+   "http://localhost:3000",
+   "https://ghalabora.jhubafrica.com"
+]
+
+app.add_middleware(
+   cors.CORSMiddleware,
+   allow_origins=allowed_origins,
+   allow_credentials=True,
+   allow_methods=["GET", "POST", "PUT", "DELETE"]
+)
 
 app.include_router(login_router)
 app.include_router(sensor_reading_router)
