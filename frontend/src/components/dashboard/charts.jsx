@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 
-import PropTypes from 'prop-types';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+
 
 // Register the required components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -51,14 +52,6 @@ const TemperatureChart = ({ data }) => {
   return <Line data={chartData} options={options} />;
 };
 
-TemperatureChart.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      time: PropTypes.string.isRequired,
-      temperature: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
 
 const HumidityChart = ({ data }) => {
   const chartData = {
@@ -105,36 +98,24 @@ const HumidityChart = ({ data }) => {
   return <Line data={chartData} options={options} />;
 };
 
-HumidityChart.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      time: PropTypes.string.isRequired,
-      humidity: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
 
-const ChartsComponent = () => {
-  const data = [
-    { time: '10:00', temperature: 22, humidity: 60 },
-    { time: '11:00', temperature: 23, humidity: 62 },
-    { time: '12:00', temperature: 24, humidity: 64 },
-    { time: '13:00', temperature: 25, humidity: 66 },
-    { time: '14:00', temperature: 26, humidity: 68 },
-  ];
 
+const ChartsComponent = ({islandData}) => {
+  
   return (
     <div className="chart-section">
       <div className='chart-card'>
         <h5>Temperature Chart</h5>
-        <TemperatureChart data={data} />
+        <TemperatureChart data={islandData} />
       </div>
       <div className='chart-card'>
         <h5>Humidity Chart</h5>
-        <HumidityChart data={data} />
+        <HumidityChart data={islandData} />
       </div>
     </div>
   );
+  
 };
+
 
 export default ChartsComponent;
