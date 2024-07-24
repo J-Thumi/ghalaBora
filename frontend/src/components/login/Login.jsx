@@ -5,17 +5,20 @@ import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
 const Login = () => {
-  const[name,setName]=useState()
+  const[username,setuserName]=useState()
   const[password,setPassword]=useState()
   const navigate=useNavigate()
 
   const handleSubmit=(e)=>{
     e.preventDefault()
-    axios.post('http://localhost:8000/login',{name,password})
+    axios.post('http://localhost:8000/login',{username,password})
     .then(result=>{
       console.log(result)
       if(result.data==="success"){
         navigate(`/dashboard/${name}`)
+    }
+    else{
+      alert("Wrong username or password")
     }
     })
     .catch(err=>console.log(err))
@@ -30,7 +33,7 @@ const Login = () => {
             <h2>Login</h2>
               <div className="input-field">
               <input type="text" 
-               onChange={(e)=>setName(e.target.value)}
+               onChange={(e)=>setuserName(e.target.value)}
               required/>
               <label>Enter your name</label>
             </div>
