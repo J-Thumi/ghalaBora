@@ -26,5 +26,6 @@ dist-ssr
 # Environments
 .env
 myenv
-fastapi_env 
+fastapi_env
+__pycache__
 

@@ -4,43 +4,55 @@ import OverviewComponent from "./Overview";
 import SensorStatusComponent from "./SensorStatus";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect, useRef } from 'react';
 
-const useFetchChartData = (url) => {
+const useWebSocket = (url) => {
   const [data, setData] = useState(() => {
     const savedData = localStorage.getItem('chartData');
     return savedData ? JSON.parse(savedData) : [];
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get(url);
-      setData(response.data);
-      localStorage.setItem('chartData', JSON.stringify(response.data));
-      setLoading(false);
-    } catch (e) {
-      setError(e.message);
-      setLoading(false);
-    }
-  };
+  const ws = useRef(null);
 
   useEffect(() => {
-    if (data.length === 0) {
-      fetchData();
-    }
-  });
+    ws.current = new WebSocket(url);
 
-  return { data, loading, error, refetch: fetchData };
+    ws.current.onopen = () => {
+      console.log('WebSocket Connected');
+      setLoading(false);
+    };
+
+    ws.current.onmessage = (event) => {
+      const newData = JSON.parse(event.data);
+      setData(prevData => {
+        const updatedData = [...prevData, newData];
+        localStorage.setItem('chartData', JSON.stringify(updatedData));
+        return updatedData;
+      });
+    };
+
+    ws.current.onerror = (error) => {
+      console.log('WebSocket Error: ', error);
+      setError('WebSocket connection error');
+    };
+
+    ws.current.onclose = () => {
+      console.log('WebSocket Disconnected');
+    };
+
+    return () => {
+      ws.current.close();
+    };
+  }, [url]);
+
+  return { data, loading, error };
 };
 
 const Dashboard = () => {
   const { userName } = useParams();
-  const [islandId, setIslandId] = useState('Island D'); // Default selected island
-  const { data, loading, error } = useFetchChartData('localhost:8000/get-sensor-readings');
+  const [islandId, setIslandId] = useState('Island D');
+  const { data, loading, error } = useWebSocket('ws://localhost:8000/ws');
 
   const handleIslandChange = (event) => {
     setIslandId(event.target.value);
@@ -62,7 +74,7 @@ const Dashboard = () => {
         <SensorStatusComponent />
         <OverviewComponent />
         {loading && <div>Loading....</div>}
-        {error && <div>Error while loading....</div>}
+        {error && <div>Error: {error}</div>}
         {!loading && !error && <ChartsComponent islandData={islandData} />}
         <Link to="/report" className="generate-report">Generate Report</Link>
       </section>
