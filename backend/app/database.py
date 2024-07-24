@@ -49,7 +49,7 @@ engine = create_engine(SQLITE_DATABASE_URL, connect_args={"check_same_thread": F
 Base = declarative_base()
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-def get_db():
+async def get_db():
    db = SessionLocal()
    try:
       yield db

@@ -52,7 +52,7 @@ const useWebSocket = (url) => {
 const Dashboard = () => {
   const { userName } = useParams();
   const [islandId, setIslandId] = useState('Island D');
-  const { data, loading, error } = useWebSocket('ws://localhost:8000/ws');
+  const { data, loading, error } = useWebSocket('ws://localhost:8000/sensor-readings');
 
   const handleIslandChange = (event) => {
     setIslandId(event.target.value);

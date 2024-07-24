@@ -11,3 +11,4 @@ python-dotenv
 asyncpg
 bcrypt
 pandas
+websockets

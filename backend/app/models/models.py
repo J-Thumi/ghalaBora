@@ -29,7 +29,7 @@ class SensorReading(Base):
 
    sensor_reading_id = Column(Integer, primary_key=True, index=True)
    sensor_id = Column(Integer, ForeignKey("sensors.sensor_id"))
-   timestamp = Column(DateTime, nullable=True)
+   timestamp = Column(Float, nullable=True)
 
    humidity = Column(Float, nullable=True)
    temp = Column(Float, nullable=True)
