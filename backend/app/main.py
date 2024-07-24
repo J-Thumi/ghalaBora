@@ -12,7 +12,8 @@ app = FastAPI()
 models.Base.metadata.create_all(engine)
 
 allowed_origins = [
-   "http://localhost:3000",
+   "http://localhost:5173",
+   "https://localhost:5173"
    "https://ghalabora.jhubafrica.com"
 ]
 

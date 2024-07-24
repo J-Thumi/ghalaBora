@@ -35,3 +35,7 @@ class UserLogin(BaseModel):
 
 class UserInDB(UserBase):
    hashed_password: str
+
+class LoginData(BaseModel):
+   username: str
+   password: str

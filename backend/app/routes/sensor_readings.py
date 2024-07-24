@@ -24,7 +24,7 @@ async def fetch_sensor_readings(db: Session = Depends(get_db)):
 
 @sensor_reading_router.post("/add-sensor-reading", status_code=status.HTTP_201_CREATED)
 def add_sensor_reading(
-   csv_file_path: str = r"path/to/.csv file", 
+   csv_file_path: str = r"C:\\Users\bened\Desktop\\Computer Science\\projects\\full-stack-web-apps\\ghalabora_web_app\\ghalaBora\backend\\app\\core\\iot_telemetry_data.csv", 
    db: Session = Depends(get_db)
 ):
    try:
@@ -35,6 +35,4 @@ def add_sensor_reading(
 @sensor_reading_router.get("/get-sensor-readings")
 async def get_sensor_readings(background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
    with db:
-      background_tasks.add_task(fetch_sensor_readings, db)
-
-   return {"message": "Fetching sensor readings"}
+      return background_tasks.add_task(fetch_sensor_readings, db)
