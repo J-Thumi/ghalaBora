@@ -37,7 +37,7 @@ const TemperatureChart = ({ data }) => {
       x: {
         title: {
           display: true,
-          text: 'Time in Days',
+          text: 'Time in Seconds',
         },
         min: 1,
         max: data.length, // Adjust based on the length of the data
@@ -88,7 +88,7 @@ const HumidityChart = ({ data }) => {
       x: {
         title: {
           display: true,
-          text: 'Time in Days',
+          text: 'Time in Seconds',
         },
         min: 1,
         max: data.length, // Adjust based on the length of the data

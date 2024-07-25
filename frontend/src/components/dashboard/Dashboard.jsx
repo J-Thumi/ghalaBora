@@ -14,10 +14,11 @@ const Dashboard = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [numValues, setNumValues] = useState(20); // Default number of values
 
   useEffect(() => {
-    // Fetch initial data using Axios
-    axios.get('http://localhost:8000/users/sensors/sensor-readings/get-sensor-readings/1/20')
+    // Fetch data based on the number of values
+    axios.get(`http://localhost:8000/users/sensors/sensor-readings/get-sensor-readings/1/${numValues}`)
       .then(response => {
         const allData = response.data.data; // Access the 'data' array within the response
         console.log('Fetched data:', allData); // Debug: Check the data structure
@@ -35,7 +36,7 @@ const Dashboard = () => {
         setError('Error fetching data');
         setLoading(false);
       });
-  }, []);
+  }, [numValues]); // Refetch data when numValues changes
 
   useEffect(() => {
     // Simulate real-time data updates
@@ -51,10 +52,17 @@ const Dashboard = () => {
         localStorage.setItem('chartData', JSON.stringify(updatedData));
         return updatedData;
       });
-    }, 3000); // Update every 5 seconds
+    }, 3000); // Update every 3 seconds
 
     return () => clearInterval(interval);
   }, [data]);
+
+  const handleNumValuesChange = (event) => {
+    const newNumValues = parseInt(event.target.value, 10);
+    if (!isNaN(newNumValues)) {
+      setNumValues(newNumValues);
+    }
+  };
 
   return (
     <main className="dashboard">
@@ -63,6 +71,20 @@ const Dashboard = () => {
         <h1>Hello {userName}, you are welcome</h1>
         <SensorStatusComponent />
         <OverviewComponent />
+        <br />
+        <br />
+        
+        <div className="input-section">
+          <label htmlFor="numValues">How many days to date do you want displayed:</label>
+          <input
+            type="number"
+            id="numValues"
+            value={numValues}
+            onChange={handleNumValuesChange}
+            min="1"
+          />
+        </div>
+        
         {loading && <div>Loading....</div>}
         {error && <div>Error: {error}</div>}
         {!loading && !error && <ChartsComponent data={data} />}
