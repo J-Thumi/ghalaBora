@@ -5,6 +5,7 @@ import ChartsComponent from "./charts";
 import DashNav from "./DashNav";
 import OverviewComponent from "./Overview";
 import SensorStatusComponent from "./SensorStatus";
+import ReportComponent from "./ReportComponent";
 
 const Dashboard = () => {
   const { userName } = useParams();
@@ -14,14 +15,13 @@ const Dashboard = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [numValues, setNumValues] = useState(20); // Default number of values
+  const [numValues, setNumValues] = useState(20);
+  const [showReport, setShowReport] = useState(false);
 
   useEffect(() => {
-    // Fetch data based on the number of values
     axios.get(`http://localhost:8000/users/sensors/sensor-readings/get-sensor-readings/1/${numValues}`)
       .then(response => {
-        const allData = response.data.data; // Access the 'data' array within the response
-        console.log('Fetched data:', allData); // Debug: Check the data structure
+        const allData = response.data.data;
         if (Array.isArray(allData)) {
           setData(allData);
           localStorage.setItem('chartData', JSON.stringify(allData));
@@ -36,15 +36,14 @@ const Dashboard = () => {
         setError('Error fetching data');
         setLoading(false);
       });
-  }, [numValues]); // Refetch data when numValues changes
+  }, [numValues]);
 
   useEffect(() => {
-    // Simulate real-time data updates
     const interval = setInterval(() => {
       const newData = {
         sensor_reading_id: data.length + 1,
-        temp: Math.random() * 20 + 10, // Random temperature between 10 and 30
-        humidity: Math.random() * 30 + 50 // Random humidity between 50 and 80
+        temp: Math.random() * 20 + 10,
+        humidity: Math.random() * 30 + 50
       };
 
       setData(prevData => {
@@ -52,7 +51,7 @@ const Dashboard = () => {
         localStorage.setItem('chartData', JSON.stringify(updatedData));
         return updatedData;
       });
-    }, 3000); // Update every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [data]);
@@ -62,6 +61,27 @@ const Dashboard = () => {
     if (!isNaN(newNumValues)) {
       setNumValues(newNumValues);
     }
+  };
+
+  const handleExportData = () => {
+    const csvRows = [];
+    csvRows.push(['sensor_reading_id', 'temp', 'humidity'].join(','));
+
+    data.forEach(row => {
+      csvRows.push([row.sensor_reading_id, row.temp, row.humidity].join(','));
+    });
+
+    const csvFile = new Blob([csvRows.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(csvFile);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'sensor_data.csv';
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const toggleReport = () => {
+    setShowReport(prev => !prev);
   };
 
   return (
@@ -85,9 +105,21 @@ const Dashboard = () => {
           />
         </div>
         
+        <button onClick={handleExportData} className="export-button">
+          Export Data as CSV
+        </button>
+        
+        <button onClick={toggleReport} className="report-button">
+          {showReport ? 'Hide Report' : 'Show Report'}
+        </button>
+        
         {loading && <div>Loading....</div>}
         {error && <div>Error: {error}</div>}
         {!loading && !error && <ChartsComponent data={data} />}
+        <br />
+        <br />
+
+        {showReport && <ReportComponent data={data} onClose={toggleReport} />}
       </section>
     </main>
   );
