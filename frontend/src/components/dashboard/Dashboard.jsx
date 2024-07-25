@@ -90,7 +90,7 @@ const Dashboard = () => {
       <section className="dashboard-section">
         <h1>Hello {userName}, you are welcome</h1>
         <SensorStatusComponent />
-        <OverviewComponent />
+        <OverviewComponent data={data} /> {/* Pass data to OverviewComponent */}
         <br />
         <br />
         
@@ -118,7 +118,6 @@ const Dashboard = () => {
         {!loading && !error && <ChartsComponent data={data} />}
         <br />
         <br />
-
         {showReport && <ReportComponent data={data} onClose={toggleReport} />}
       </section>
     </main>

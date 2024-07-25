@@ -735,7 +735,7 @@ select:active{
   flex-direction: column;
   background-color: #efefef;
   box-shadow: .5px .5px 1px;
-  width: 250px;
+  width: 400px;
   height: 80px;
   border: 0px solid white;
   padding: 1rem;
