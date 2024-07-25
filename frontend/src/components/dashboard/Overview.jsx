@@ -29,6 +29,11 @@ const OverviewComponent = ({ data }) => {
 
   const latestData = data.length > 0 ? data[data.length - 1] : { temp: 0, humidity: 0 };
 
+  // Function to determine the color based on deviation
+  const getDeviationColor = (deviation) => {
+    return deviation >= 0 ? 'green' : 'red';
+  };
+
   return (
     <section className="overview">
       <div className="overview-container">
@@ -37,7 +42,12 @@ const OverviewComponent = ({ data }) => {
           <div className="info-div">
             <p className="info">
               {latestData.temp.toFixed(2)} <span className="unit">°C</span>
-              <span className="deviation">{tempDeviation}°C</span>
+              <span
+                className="deviation"
+                style={{ color: getDeviationColor(tempDeviation) }}
+              >
+                {tempDeviation}°C
+              </span>
             </p>
           </div>
         </div>
@@ -46,7 +56,12 @@ const OverviewComponent = ({ data }) => {
           <div className="info-div">
             <p className="info">
               {latestData.humidity.toFixed(2)} <span className="unit">RH</span>
-              <span className="deviation">{humidityDeviation}RH</span>
+              <span
+                className="deviation"
+                style={{ color: getDeviationColor(humidityDeviation) }}
+              >
+                {humidityDeviation}RH
+              </span>
             </p>
           </div>
         </div>
