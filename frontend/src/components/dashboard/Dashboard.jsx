@@ -88,7 +88,7 @@ const Dashboard = () => {
     <main className="dashboard">
       <DashNav />
       <section className="dashboard-section">
-        <h1>Hello {userName}, you are welcome</h1>
+   
         <SensorStatusComponent />
         <OverviewComponent data={data} /> {/* Pass data to OverviewComponent */}
         <br />

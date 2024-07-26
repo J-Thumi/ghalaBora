@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Logo from "../../images/LogoSymb.svg";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +23,8 @@ const Login = () => {
     .then(result => {
       console.log(result);
       if (result.data.detail === "Success") {
-        navigate(`/dashboard/${username}`); // Fix reference from 'name' to 'username'
+        localStorage.setItem('token', result.data.token); // Save the token in local storage
+        navigate(`/dashboard/`);
       } else {
         alert("Wrong username or password");
       }
