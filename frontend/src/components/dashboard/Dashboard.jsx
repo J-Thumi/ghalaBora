@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ChartsComponent from "./charts";
 import DashNav from "./DashNav";
@@ -8,7 +7,6 @@ import SensorStatusComponent from "./SensorStatus";
 import ReportComponent from "./ReportComponent";
 
 const Dashboard = () => {
-  const { userName } = useParams();
   const [data, setData] = useState(() => {
     const savedData = localStorage.getItem('chartData');
     return savedData ? JSON.parse(savedData) : [];

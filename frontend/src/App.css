@@ -7,6 +7,7 @@
 body{
     width: 100%;
     font-size: 15px;
+    
 } 
 header {
   position: relative;
@@ -26,9 +27,11 @@ header {
   max-width: 100%;
   margin: 0;
   justify-content: space-between;
+  transition:.7s ease; /* Smooth transition for background color */
   @container style(background-color: transparent){
     color: black;
   }
+  
 }
 .navbar-landing .logo {
   gap: 10px;
@@ -55,6 +58,39 @@ header {
   top: 1rem;
   left: -40px;
 }
+.navbar-landing.scrolled {
+  background-color: #1b320f;
+  transition: 1s;
+  padding: 3px;
+  position: fixed;
+  top: 0;
+  width: 100svw;
+}
+/* Changes for links when scrolled */
+.navbar-landing.scrolled .links {
+  top: auto; 
+}
+.navbar-landing.scrolled .logo img {
+  width: 60px; /* Reduce logo size */
+  height: 60px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.navbar-landing.scrolled .links a {
+  color: #ffffff; /* Change text color when scrolled */
+  font-weight: 500; /* Make text slightly bolder when scrolled */
+}
+
+.navbar-landing.scrolled .links a:hover {
+  color: #e0e0e0; /* Change hover color when scrolled */
+}
+
+/* You can also modify the active link style when scrolled */
+.navbar-landing.scrolled .links .active {
+  border-bottom: #ffffff solid 2px; /* Change the active indicator color */
+}
+
 
 .navbar-landing  .links a {
   font-size: .8rem;

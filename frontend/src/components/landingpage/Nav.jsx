@@ -15,18 +15,33 @@ const Nav = () => {
     }
   }, []);
 
-  const handleClick = (event,hash) => {
+  const handleClick = (hash) => {
     //event.preventDefault()// Prevent the default anchor behavior
     // Update the state and local storage with the new active link
     setActiveLink(hash);
     localStorage.setItem('activeLink', hash);
   };
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 5;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
   return (
-    <div>
-      
+    <div> 
     <header>
-        <nav className="navbar-landing">
+        <nav className={`navbar-landing ${scrolled ? 'scrolled' : ''}`}>
             <a href="#" className="logo">
                 <img src={logo} alt="logo"/>
             </a>

@@ -11,38 +11,30 @@ const container=(delay)=>({
     }
   })
 
+
 const Homepage = () => {
 
   return (
-    <div>
-       <section id="Home" className="home lazy">
-        <Nav/>
-        <div>
-        <div className="text-box">
-            
-            <motion.h1
-            variants={container(0.1)}
-            initial="hidden"
-            animate='visible'
-            >Making monitoring hassle-free</motion.h1>
-            <motion.p
-            variants={container(0.2)}
-            initial="hidden"
-            animate='visible'>
-                Our advanced real-time quality control ensures the highest quality for legumes. Utilizing cutting-edge technology, it accurately detects defects, size variations, moisture content, and foreign materials, guaranteeing consistency, safety, and superior quality in every batch.
-            </motion.p>
-            
-          </div>
+      <section id="Home" className="home lazy">
+      <Nav/>
+      <div>
+      <div className="text-box">
+          
+          <motion.h1
+          variants={container(0.1)}
+          initial="hidden"
+          animate='visible'
+          >Making monitoring hassle-free</motion.h1>
+          <motion.p
+          variants={container(0.2)}
+          initial="hidden"
+          animate='visible'>
+              Our advanced real-time quality control ensures the highest quality for legumes. Utilizing cutting-edge technology, it accurately detects defects, size variations, moisture content, and foreign materials, guaranteeing consistency, safety, and superior quality in every batch.
+          </motion.p>
+          
         </div>
-       </section>
-
-
-
-  
-  
-  
-  
-    </div>
+      </div>
+      </section>
   )
 }
 
