@@ -1,6 +1,5 @@
+/* eslint-disable react/prop-types */
 // Overview.jsx
-
-import React from 'react';
 
 const calculateDeviations = (data) => {
   if (data.length < 10) return { tempDeviation: 0, humidityDeviation: 0 };
@@ -19,8 +18,8 @@ const calculateDeviations = (data) => {
   const humidityDeviation = latestHumidity - avgHumidity;
 
   return {
-    tempDeviation: tempDeviation.toFixed(2),
-    humidityDeviation: humidityDeviation.toFixed(2),
+    tempDeviation: Number(tempDeviation.toFixed(2)),
+    humidityDeviation: Number(humidityDeviation.toFixed(2)),
   };
 };
 
@@ -28,6 +27,7 @@ const OverviewComponent = ({ data }) => {
   const { tempDeviation, humidityDeviation } = calculateDeviations(data);
 
   const latestData = data.length > 0 ? data[data.length - 1] : { temp: 0, humidity: 0 };
+  console.log(latestData)
 
   // Function to determine the color based on deviation
   const getDeviationColor = (deviation) => {
@@ -41,7 +41,7 @@ const OverviewComponent = ({ data }) => {
           <p>Temperature</p>
           <div className="info-div">
             <p className="info">
-              {latestData.temp.toFixed(2)} <span className="unit">°C</span>
+              {Number(latestData.temp).toFixed(2)} <span className="unit">°C</span>
               <span
                 className="deviation"
                 style={{ color: getDeviationColor(tempDeviation) }}
@@ -55,7 +55,7 @@ const OverviewComponent = ({ data }) => {
           <p>Relative Humidity</p>
           <div className="info-div">
             <p className="info">
-              {latestData.humidity.toFixed(2)} <span className="unit">RH</span>
+              {Number(latestData.humidity).toFixed(2)} <span className="unit">RH</span>
               <span
                 className="deviation"
                 style={{ color: getDeviationColor(humidityDeviation) }}

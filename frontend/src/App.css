@@ -810,22 +810,37 @@ select:active{
   position: relative;
   left: 60%;
 }
-/* report page */
 
-.generate-report{
-  background-color: #1b320f;
-  padding: .5rem ;
-  border: 0px;
-  outline: 0px;
+
+
+.input-section{
+  display: flex;
   position: relative;
-  top: 4rem;
-  left: 27%;
-  text-decoration: none;
-  color: white;
-  font-weight: 550;
+  display: none;
+}
+/*report*/
+.report-container{
+  position: relative;
+  top: 3rem;
+  width: 100svw;
+  display: flex;
+  flex-direction: column;
+  border-top: 2px #1b320f solid;
+  width: 80%;
+}
+.stats-table > *{
+  align-items: flex-end;
+
 }
 
-
+.download-button{
+  width: fit-content;
+  padding: .5rem;
+  background-color: #1b320f;
+  border-radius: 5px;
+  position: relative;
+  left: 80%;
+}
 
 /*charts*/
 .chart-section{

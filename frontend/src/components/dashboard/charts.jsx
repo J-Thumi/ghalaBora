@@ -1,17 +1,27 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
 // Register the required components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+const WINDOW_SIZE = 15; // Number of data points to show in the sliding window
+
 const TemperatureChart = ({ data }) => {
+  const [windowData, setWindowData] = useState([]);
+
+  useEffect(() => {
+    setWindowData(data.slice(-WINDOW_SIZE));
+  }, [data]);
+
   const chartData = {
-    labels: data.map((_, index) => index + 1), // Use index as labels, starting from 1
+    labels: windowData.map((_, index) => index + 1),
     datasets: [
       {
         label: 'Temperature',
-        data: data.map(d => d.temp), // Extract the temperature from the data
+        data: windowData.map(d => d.temp),
         fill: false,
         backgroundColor: 'rgba(75,192,192,0.2)',
         borderColor: 'rgba(75,192,192,1)',
@@ -40,15 +50,15 @@ const TemperatureChart = ({ data }) => {
           text: 'Time in Seconds',
         },
         min: 1,
-        max: data.length, // Adjust based on the length of the data
+        max: WINDOW_SIZE,
       },
       y: {
         title: {
           display: true,
           text: 'Temperature (°C)',
         },
-        min: 10,
         max: 30,
+        min: 10
       },
     },
   };
@@ -57,12 +67,18 @@ const TemperatureChart = ({ data }) => {
 };
 
 const HumidityChart = ({ data }) => {
+  const [windowData, setWindowData] = useState([]);
+
+  useEffect(() => {
+    setWindowData(data.slice(-WINDOW_SIZE));
+  }, [data]);
+
   const chartData = {
-    labels: data.map((_, index) => index + 1), // Use index as labels, starting from 1
+    labels: windowData.map((_, index) => index + 1),
     datasets: [
       {
         label: 'Relative Humidity',
-        data: data.map(d => d.humidity), // Extract the humidity from the data
+        data: windowData.map(d => d.humidity),
         fill: false,
         backgroundColor: 'rgba(153,102,255,0.2)',
         borderColor: 'rgba(153,102,255,1)',
@@ -91,15 +107,15 @@ const HumidityChart = ({ data }) => {
           text: 'Time in Seconds',
         },
         min: 1,
-        max: data.length, // Adjust based on the length of the data
+        max: WINDOW_SIZE,
       },
       y: {
         title: {
           display: true,
           text: 'Relative Humidity (%)',
         },
-        min: 50,
-        max: 80,
+        max: 90,
+        min: 20,
       },
     },
   };
