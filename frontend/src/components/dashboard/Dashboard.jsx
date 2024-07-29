@@ -6,6 +6,7 @@ import OverviewComponent from "./Overview";
 import SensorStatusComponent from "./SensorStatus";
 import ReportComponent from "./ReportComponent";
 
+
 const Dashboard = () => {
   const [data, setData] = useState(() => {
     const savedData = localStorage.getItem('chartData');
