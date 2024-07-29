@@ -53,14 +53,14 @@ const Team = () => {
               <img src={lee} alt="test"/>
               <div className="layer">
                   <h3>Lee Thiong'o</h3>
-                  <p>IoT Programmer</p>
+                  <p>IoT Programmer<br/> Frontend Developer</p>
               </div>
           </div>
           <div className="team-col">
               <img src={john} alt="test"/>
               <div className="layer">
                   <h3>John Kibet</h3>
-                  <p>IoT Programmer</p>
+                  <p>IoT Programmer <br/> Backend Developer</p>
               </div>
           </div>
       </div>
