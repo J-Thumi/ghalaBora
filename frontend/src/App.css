@@ -189,7 +189,6 @@ nav .fa-solid {
 
 /*our services*/
 .services {
-
   width: 80%;
   margin: auto;
   text-align: center;
@@ -267,6 +266,7 @@ nav .fa-solid {
 .service-col img {
   width: 100%;
   display: block;
+  border-radius: 5px;
 }
 /*problem*/
 .prob{
@@ -277,6 +277,7 @@ nav .fa-solid {
   align-items: center;
   background-color: #efefef;
   box-shadow:.2px .2px 1px ;
+  border-radius: 8px;
   width: 700px;
   height: 300px;
   top: 1rem;
@@ -320,6 +321,7 @@ nav .fa-solid {
 
 .features-col img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .features-col p {
@@ -351,6 +353,7 @@ nav .fa-solid {
   background-color: #efefef;
   padding: 25px;
   display: flex;
+  border-radius: 8px;
 }
 
 .collaborators-col img {
@@ -358,6 +361,7 @@ nav .fa-solid {
   margin-left: 5px;
   margin-right: 30px;
   border-radius: 50%;
+  border-radius: 8px;
 }
 
 .collaborators-col p {
@@ -392,11 +396,13 @@ nav .fa-solid {
   position: relative;
   margin: 0.5rem;
   padding: 0;
+  border-radius: 8px;
 }
 .team-col img{
   width: 320px;
   height: 280px;
   box-shadow:.2px .2px  7px;
+  border-radius: 8px;
 }
 .layer {
   background: transparent;
@@ -407,6 +413,7 @@ nav .fa-solid {
   left: 0;
   transition: 0.5s;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.8));
+  border-radius: 8px;
 }
 
 .layer h3 {

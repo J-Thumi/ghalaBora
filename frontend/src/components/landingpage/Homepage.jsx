@@ -24,13 +24,15 @@ const Homepage = () => {
           variants={container(0.1)}
           initial="hidden"
           animate='visible'
-          >Making monitoring hassle-free</motion.h1>
+          >The premier solution for effortless quality assurance</motion.h1>
           <motion.p
           variants={container(0.2)}
           initial="hidden"
           animate='visible'>
-              Our advanced real-time quality control ensures the highest quality for legumes. Utilizing cutting-edge technology, it accurately detects defects, size variations, moisture content, and foreign materials, guaranteeing consistency, safety, and superior quality in every batch.
-          </motion.p>
+            Our user-friendly web app simplifies legume quality monitoring. 
+            It continuously tracks temperature and humidity levels in storage areas, providing real-time data and generating detailed reports. This convenient tool helps maintain optimal storage conditions,
+             supporting quality preservation and reducing the risk of spoilage
+            </motion.p>
           
         </div>
       </div>
