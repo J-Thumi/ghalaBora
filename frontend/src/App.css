@@ -737,6 +737,10 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+.dropdownBtn{
+  display: none;
+}
+
 .overview{
   display: flex;
   flex-direction: column;
@@ -830,7 +834,6 @@ select:active{
 }
 .stats-table > *{
   align-items: flex-end;
-
 }
 
 .download-button{
@@ -871,7 +874,20 @@ select:active{
   body{
     font-size: 13px;
   }
+  .landing-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   /*homepage*/
+
+  .navbar-landing.scrolled {
+    background-color: transparent;
+  }
+  .navbar-landing.scrolled .logo img {
+    background-color: #1b320f;
+  }
 
   /*login*/
   .wrapper{
@@ -891,7 +907,31 @@ select:active{
  .home{
   height: 90svh;
 }
-
+ .login-btn {
+display: none;
+}
+.dropdownBtn{
+  display: flex;
+  position: absolute;
+  top: 3rem;
+  right: 1.5rem;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: .9rem;
+  font-weight: 550;
+  padding: .5rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+  border-radius: 50px;
+  background-color: transparent;
+}
+.navbar-landing.scrolled .dropdownBtn{
+  background-color: #1b320f;
+  top: 5px;
+  right: 10px;
+  padding: 1.5rem;
+}
 .text-box{
   top: 15%;
   left: 10%;
@@ -922,13 +962,37 @@ nav .fa-solid {
 .navbar-landing  .links {
   display: none;
 }
+/*dropdown-div*/
+.dropdown-div{
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  top: 4rem;
+  right: 3rem;
+  flex-direction: column;
+  background-color: #efefef;
+  border-radius: 5px;
+  box-shadow: .5px .5px 1px;
+  padding: .5rem;
+  width: fit-content;
+}
+.dropdown-div .links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:  flex-start;
+  gap: 10px;
+}
+.dropdown-div .links li a{
+  color: black;
+}
 
 /*problem*/
 .prob{
   width: 350px;
   height: 300px;
   top: 1rem;
-  left: 30px;
+  left: auto;
 }
 .prob h1{
   font-size: 25px;
@@ -950,13 +1014,10 @@ nav .fa-solid {
   flex-direction: column;
 }
 
-
-
-
-
-
-
 /*features*/
+.features{
+  margin: 0;
+}
 
 .row{
   display: flex;
@@ -978,8 +1039,63 @@ nav .fa-solid {
   left: -30px;
 }
 
+/*charts */
+.chart-section{
+  flex-direction: column;
+  padding: .5rem;
+}
+
+.chart-card{
+  width: 350px;
+  height: 250px;
+  padding: .5rem;
+}
+
+
+/*Overview*/
+.overview-card{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 70px;
+  padding: .5rem;
+}
+/*report*/
+
+/*team*/
+.team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw; 
+  overflow: hidden;
+  margin: 1rem;
+  padding: 0;
+}
+
+.team .row {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.team .row .team-col {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.team .row {
+  animation: marquee 30s linear infinite;
+}
+
+
   
 }
 @media (max-width: 564px) {
   
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }

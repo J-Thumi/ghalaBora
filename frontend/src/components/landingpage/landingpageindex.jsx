@@ -9,7 +9,7 @@ import Problem from './Problem'
 
 const LandingPageIndex = () => {
   return (
-    <main>
+    <main className='landing-page'>
       < Homepage/>
       <Problem/>
       <Features/>
